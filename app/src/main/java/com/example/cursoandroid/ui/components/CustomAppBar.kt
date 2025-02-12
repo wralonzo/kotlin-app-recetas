@@ -8,7 +8,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
+import com.example.cursoandroid.ui.theme.PrimaryDegradate
+import com.example.cursoandroid.ui.theme.SecondaryDegradate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,8 +23,8 @@ fun CustomAppBar(title: String, onBackPressed: Boolean? = true) {
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xFF6200EE),
-                            Color(0xFF9C27B0)
+                            PrimaryDegradate,
+                            SecondaryDegradate
                         ) // Degradado de púrpura
                     )
                 )
@@ -38,8 +39,8 @@ fun CustomAppBar(title: String, onBackPressed: Boolean? = true) {
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xFF6200EE),
-                            Color(0xFF9C27B0)
+                            PrimaryDegradate,
+                            SecondaryDegradate
                         ) // Degradado de púrpura
                     )
                 )

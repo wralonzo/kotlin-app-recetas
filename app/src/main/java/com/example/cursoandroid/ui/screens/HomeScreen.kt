@@ -25,6 +25,7 @@ val menuItems = listOf(
 fun HomeScreen() {
     val navController = LocalNavController.current
     Scaffold(
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             CustomAppBar(
                 title = "Koalit APP",

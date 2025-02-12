@@ -18,6 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import com.example.cursoandroid.ui.theme.IconColor
+import com.example.cursoandroid.ui.theme.TextColorAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable()
@@ -33,14 +35,14 @@ fun CustomAppBarNormal(title: String, onBackPressed: Boolean? = true) {
                     text = title,
                     style = MaterialTheme.typography.titleLarge,
                     textAlign = TextAlign.Center,
-                    color = Color.White,
+                    color = TextColorAppBar,
                 )
             }
         },
         navigationIcon = {
             // Botón de retroceso
             IconButton(onClick = { navController.popBackStack() }) {
-                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
+                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back", tint = IconColor)
             }
         },
         actions = {
@@ -50,7 +52,7 @@ fun CustomAppBarNormal(title: String, onBackPressed: Boolean? = true) {
                     popUpTo("home") { inclusive = true }
                 }
             }) {
-                Icon(imageVector = Icons.Default.Home, contentDescription = "Home", tint = Color.White)
+                Icon(imageVector = Icons.Default.Home, contentDescription = "Home", tint = IconColor)
             }
         },
         colors = TopAppBarDefaults.topAppBarColors(
