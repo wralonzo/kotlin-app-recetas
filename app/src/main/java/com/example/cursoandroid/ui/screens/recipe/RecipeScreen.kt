@@ -30,7 +30,7 @@ fun RecipeScreen(viewModel: RecipeViewModel = viewModel()) {
     Scaffold(
         topBar = {
             CustomAppBar(
-                title = "Recetas",
+                title = "Listado de recetas",
                 onBackPressed = true
             )
         },
@@ -47,7 +47,6 @@ fun RecipeScreen(viewModel: RecipeViewModel = viewModel()) {
                 .padding(paddingValues)
                 .fillMaxSize()
         ) {
-            Text(text = "Recetas")
 
             recipes.forEach { recipe ->
                 Card(
