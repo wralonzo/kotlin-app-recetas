@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.cursoandroid.R
 
 @Composable
 fun CustomImageButton(@DrawableRes resource: Int) {

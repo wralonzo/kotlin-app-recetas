@@ -23,4 +23,7 @@ interface RecipeDao {
 
     @Query("SELECT * FROM tbl_recipes WHERE favorite = 1")
     fun getFavoriteRecipes(): kotlinx.coroutines.flow.Flow<List<Recipe>>
+
+    @Query("SELECT * FROM tbl_recipes WHERE id = :id")
+    fun findOne(id: Int): kotlinx.coroutines.flow.Flow<Recipe>
 }

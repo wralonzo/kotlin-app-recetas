@@ -9,7 +9,8 @@ data class Recipe(
     val title: String,
     val description: String,
     val image: String,
-    val favorite: Boolean = false,
-    val score: Float = 0f,
-    val comments: String = ""
+    var favorite: Boolean = false,
+    var score: Float = 0f,
+    val comments: String = "",
+    val time: Int = 0
 )

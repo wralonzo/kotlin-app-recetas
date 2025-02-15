@@ -12,15 +12,22 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
+import com.example.cursoandroid.data.database.user.SessionManager
 import com.example.cursoandroid.ui.theme.IconColor
 import com.example.cursoandroid.ui.theme.TextColorAppBar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun CustomAppBarCenter(title: String, onBackPressed: Boolean? = true) {
     // Si no se pasa onBackPressed, usamos CenterAlignedTopAppBar para centrar el título
     val navController = LocalNavController.current
+    val context = LocalContext.current
+    val sessionManager = SessionManager(context)
     CenterAlignedTopAppBar(
         title = {
             Text(
@@ -34,6 +41,9 @@ fun CustomAppBarCenter(title: String, onBackPressed: Boolean? = true) {
             // Botón de salida
             IconButton(
                 onClick = {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        sessionManager.clearSession()
+                    }
                 navController.navigate("login") {
                     popUpTo("home") { inclusive = true }
                 }
