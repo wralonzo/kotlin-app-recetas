@@ -45,7 +45,7 @@ Esta es una aplicación desarrollada en **Jetpack Compose** que implementa naveg
 
 ### 🔹 Clonar el Repositorio
 ```sh
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/user/tu_repositorio.git
 cd tu_repositorio
 ```
 
@@ -107,5 +107,5 @@ CustomSnackbar(message = "¡Bienvenido!", type = SnackbarType.SUCCESS)
 ```
 
 ## 📄 Licencia
-MIT License © 2024 Tu Nombre/Usuario
+MIT License © 2024 wralonzo
 
