@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -123,7 +124,9 @@ fun RecipeViewScreen(recipeId: String = "0", viewModel: RecipeViewModel = viewMo
                         Image(
                             bitmap = bitmap.asImageBitmap(),
                             contentDescription = "Recipe Image",
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .height(200.dp)
+                                .fillMaxWidth(),
                             contentScale = ContentScale.Crop
                         )
 
@@ -158,7 +161,8 @@ fun RecipeViewScreen(recipeId: String = "0", viewModel: RecipeViewModel = viewMo
                                 onValueChange = { newValue ->
                                     score = newValue
                                     recipe?.score = score
-                                    viewModel.update(recipe!!) },
+                                    viewModel.update(recipe!!)
+                                },
                                 valueRange = 1f..5f, // Rango de valores de 1 a 5
                                 steps = 3, // Permite solo valores enteros (1, 2, 3, 4, 5)
                                 colors = SliderDefaults.colors(
@@ -172,7 +176,7 @@ fun RecipeViewScreen(recipeId: String = "0", viewModel: RecipeViewModel = viewMo
                     }
 
                     CustomSpace(height = 20)
-                    Card (
+                    Card(
                         shape = RoundedCornerShape(16.dp), // Bordes redondeados
                         colors = CardDefaults.cardColors(
                             containerColor = Color.White, // Color de fondo del Card
@@ -182,7 +186,7 @@ fun RecipeViewScreen(recipeId: String = "0", viewModel: RecipeViewModel = viewMo
                             defaultElevation = 8.dp // Sombra (altura del Card)
                         ),
                         modifier = Modifier.padding(10.dp)
-                    ){
+                    ) {
                         Column {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
@@ -203,7 +207,9 @@ fun RecipeViewScreen(recipeId: String = "0", viewModel: RecipeViewModel = viewMo
                                     imageVector = Icons.Outlined.Favorite,
 
                                     contentDescription = "Favorite",
-                                    tint = if (favorite == true) Color(0xFFE91E63) else Color(0xFF99799E)
+                                    tint = if (favorite == true) Color(0xFFE91E63) else Color(
+                                        0xFF99799E
+                                    )
                                 )
                                 Icon(
                                     modifier = Modifier

@@ -107,7 +107,7 @@ fun RecipeForm() {
                     CustomOutlinedTextField(
                         value = time,
                         onValueChange = { time = it },
-                        label = "Tiempo",
+                        label = "Tiempo en minutos",
                         modifier = Modifier
                             .fillMaxWidth()
                             .focusRequester(focusTime),
